@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <!-- google fonts link -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Annie+Use+Your+Telescope&family=Homemade+Apple&display=swap" rel="stylesheet">
+    
+    <!-- head, meta, title infos -->
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <title>Document</title>
+
+        <!-- css -->
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                font-family: 'Annie Use Your Telescope', cursive;
+            }
+
+            .header {
+                position: relative;
+                width: 100%;
+                min-height: 100vh;
+            }
+
+            img {
+                width: 100vw;
+                height: 100%;
+                object-fit: cover;
+                position: fixed;
+                top: 0;
+                left: 0;
+                z-index: -1;
+                filter: brightness(18%);
+            }
+
+            .header .shop_infos {
+                text-align: center;
+                width: 90%;
+                color: #fff;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+
+            .header .shop_infos h1 {
+                font-family: 'Homemade Apple', cursive;
+                font-size: 90px;
+                font-weight: bold;
+                margin-bottom: 20px;
+                transition: 0.3s;
+            }
+
+            .header .shop_infos h1:hover {
+                font-size: 100px;
+            }
+
+            .header .shop_infos .address_hours {
+                font-size: 30px;
+                font-weight: bold;
+                color: white;
+                text-align: center;
+                position: relative;
+                display: inline-block;
+                padding: 10px 15px;
+                border: 1px solid #ba8774;
+                border-radius: 10px;
+            }
+
+            .header .shop_infos .address_hours:hover {
+                box-shadow: 0 0 30px 0px rgba(0,0,0,0.5);
+            }
+
+            #icon, #icon1 {
+                fill: white;
+                transition: 0.3s;
+            }
+
+            .header .shop_infos .address_hours address p {
+                display: inline-block;
+                padding-bottom: 20px;
+                transition: 0.3s;
+            }
+
+            .header .shop_infos .address_hours address a {
+                text-decoration: none;
+                color: white;
+                transition: 0.3s;
+            }
+
+            .header .shop_infos .address_hours table {
+                display: inline-block;
+                padding-top: 20px;
+                text-align: center;
+                position: inherit;
+            }
+
+            .header .shop_infos .address_hours table thead {
+                font-size: 40px;
+                transition: 0.3s;
+            }
+
+            .header .shop_infos .address_hours table thead:hover {
+                color: #485b90;
+            }
+
+            .header .shop_infos .address_hours table td {
+                transition: 0.2s;
+            }
+
+            .header .shop_infos .address_hours table td:hover {
+                color: #485b90;
+            }
+
+            .menu {
+                color: white;
+                width: 70%;
+                margin: auto;
+                text-align: center;
+                padding-top: 100px;
+            }
+
+            .menu h2 {
+                font-size: 50px;
+                font-weight: 600px;
+                transition: 0.3s;
+            }
+
+            .menu h2:hover {
+                color: #485b90;
+            }
+
+            .menu .prices {
+                font-size: 25px;
+                font-weight: 300px;
+                line-height: 22px;
+                padding: 10px;
+                transition: 0.2s;
+            }
+
+            .menu .prices:hover {
+                color: #485b90;
+                font-size: 30px;
+            }
+
+            .menu .description p {
+                font-size: 20px;
+                font-weight: 150px;
+                line-height: 22px;
+                padding: 10px;
+            }
+
+            .menu dt {
+                font-size: 20px;
+            }
+
+            .menu-row {
+                margin-top: 5%;
+                display: flex;
+                justify-content: space-between;
+            }
+
+            .menu-col {
+                flex-basis: 31%;
+                border: 1px solid #ba8774;
+                border-radius: 10px;
+                margin-bottom: 2%;
+                padding: 20px 12px;
+                box-sizing: border-box;
+            }
+
+            .menu-col:hover {
+                box-shadow: 0 0 30px 0px rgba(0,0,0,0.5);
+            }
+
+            .menu .prices {
+                font-style: italic;
+            }
+
+            .note {
+                color: #716f73;
+            }
+        </style>
+    </head>
+
+    <!-- body tag -->
+    <body>
+
+        <!-- background photo -->
+        <img src="https://assets.codepen.io/t-1/nathan-dumlao-6VhPY27jdps-unsplash.jpg" alt="three hands toasting with coffee drinks"/>
+
+        <!-- upper part of the website -->
+        <section class="header">
+
+            <div class="shop_infos">
+
+                <h1>The Cascade Cafe</h1>
+
+                <div class="address_hours">
+            
+                    <address>
+                        <svg viewBox="0 0 384 512" width="15" title="map-marker-alt" onmouseover="changeIconColor()" onmouseout="changeBackIconColor()">
+                            <path id="icon" d="M172.268 501.67C26.97 291.031 0 269.413 0 192 0 85.961 85.961 0 192 0s192 85.961 192 192c0 77.413-26.97 99.031-172.268 309.67-9.535 13.774-29.93 13.773-39.464 0zM192 272c44.183 0 80-35.817 80-80s-35.817-80-80-80-80 35.817-80 80 35.817 80 80 80z"/>
+                        </svg>
+
+                        <p id="address" onmouseover="changeIconColor()" onmouseout="changeBackIconColor()">123 Main Street &middot; Smalltown, PA</p> <br>
+
+                        <svg viewBox="0 0 512 512" width="15" title="phone-alt" onmouseover="changeIconColor1()" onmouseout="changeBackIconColor1()">
+                            <path id="icon1" d="M497.39 361.8l-112-48a24 24 0 0 0-28 6.9l-49.6 60.6A370.66 370.66 0 0 1 130.6 204.11l60.6-49.6a23.94 23.94 0 0 0 6.9-28l-48-112A24.16 24.16 0 0 0 122.6.61l-104 24A24 24 0 0 0 0 48c0 256.5 207.9 464 464 464a24 24 0 0 0 23.4-18.6l24- 104a24.29 24.29 0 0 0-14.01-27.6z"/>
+                        </svg>
+
+                        <a href="4125550100" id="phone" onmouseover="changeIconColor1()" onmouseout="changeBackIconColor1()">412-555-0100</a>
+                    </address>
+
+                    <table class="hours">
+                        <thead>
+                            <tr>
+                                <th colspan="2">Hours</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td>Mon. - Thurs.</td>
+                                <td>6 a.m. - 9 p.m.</td>
+                            </tr>
+
+                            <tr>
+                                <td>Fri. - Sat.</td>
+                                <td>6 a.m. - 11 p.m.</td>
+                            </tr>
+
+                            <tr>
+                                <td>Sunday</td>
+                                <td>8 a.m. - 2 p.m.</td>
+                            </tr>
+                        </tbody>
+
+                    </table>
+
+                </div>
+            </div>
+        </section>
+
+        <div class="menu">
+
+                <div class="menu-row">
+
+                    <div class="menu-col">
+                        <h2>Coffee</h2>   
+                        <p class="prices"><span>Small: $2</span> <span>Large: $4</span></p>
+
+                        <dl>
+                            <dt>House Blend</dt>
+                           <dd class="description">
+                                <p>Smoky, strong, and assertive, just like us.</p>
+                            </dd>
+
+                            <dt>Organic French Roast</dt>
+                            <dd class="description">
+                                <p>Smooth and mellow with hints of molasses.</p>
+                            </dd>
+
+                            <dt>Organic Decaf</dt>
+                            <dd class="description">
+                                <p>Full bodied and rich, we promise you won't miss the caffiene.</p>
+                            </dd>
+                        </dl>
+                    </div>
+
+                    <div class="menu-col">
+                        <h2>Espresso Drinks</h2>
+                        <p class="prices"><span>Small: $3</span> <span>Large: $5</span></p>
+
+                        <dl class>
+                            <dt>Machiatto</dt>
+                            <dd class="description">
+                                <p>Espressso and steamed milk, served in a demitasse cup.<span class="note">(Size Small Only)</span></p>
+                            </dd>
+
+                            <dt>Latte</dt>
+                            <dd class="description">
+                                <p>Espresso with steamed milk, and sometimes a little art on top.</p>
+                            </dd>
+
+                            <dt>Mocha</dt>
+                            <dd class="description">
+                                <p>Espresso with steamed chocolate milk and whipped cream. Also available with white chocolate milk.</p>
+                            </dd>
+
+                            <dt>Americano</dt>
+                            <dd class="description">
+                                <p>1 shot espresso, two shots hot water.</p>
+                            </dd>
+
+                        </dl>
+                    </div>
+                
+
+                </div>
+
+                <div class="menu-row">
+
+                    <div class="menu-col">
+                        <h2>Tea</h2>
+                        <p>Served to brave people in our notorious antique tea cups.</p>
+
+                        <p class="prices"><span>Per Cup: $2</span><span class="note"> $200 if you break the cup</span></p>
+
+                        <dl>
+                            <dt>Earl Grey</dt>
+                            <dd class="description">
+                                <p>Black tea fragranced with bergamot.</p>
+                            </dd>
+
+                            <dt>Ginger Hibiscus</dt>
+                            <dd class="description">
+                                <p>Floral, tart, and spicy. Caffeine free.</p>
+                            </dd>
+
+                            <dt>Cascade Green</dt>
+                            <dd class="description">
+                                <p>A blend of green teas hand selected by our master teamaker.</p>
+                            </dd>
+                
+                            <dt>Chamomile</dt>
+                            <dd class="description">
+                                <p>Soothing and slightly sweet. Try it with honey! Caffeine free.</p>
+                            </dd>
+
+                        </dl>
+                    </div>
+
+                    <div class="menu-col">
+                        <h2>From the Bakery</h2>
+                        <p class="prices"><span>Cookies: $2</span> <span>Muffins &amp; Pastries: $3</span></p>
+            
+                        <dl>
+                            <dt>Mallory's Famous Snickerdoodles</dt>
+                            <dd class="description">
+                                <p>Creamy cinnamony goodness made from scratch with our founder Mallory's prizewinning recipe.</p>
+                            </dd>
+
+                            <dt>Oatmeal Cookie</dt>
+                            <dd class="description">
+                                <p>Packed with rolled oats, raisins, and cranberries, these monster cookies are (almost) good for ya!</p>
+                            </dd>
+
+                            <dt>Mixed Berry Muffins</dt>
+                            <dd class="description">
+                                <p>Filled with the best berries of the season and topped with a crumb crust.</p>
+                            </dd>
+
+                            <dt>Croissant</dt>
+                            <dd class="description">
+                                <p>Our oversized croissants are buttery, flaky, and usually all sold out by 7 a.m.</p>
+                            </dd>
+
+                        </dl>
+                    </div>
+
+                </div>
+        </div>
+        
+    </body>
+
+    <!-- javascript -->
+    <script>
+        function changeIconColor() {
+            document.getElementById('icon').style.fill = "#485b90" ; // Changes the color of Icon Color to Purple/Blue when hover over
+            document.getElementById('address').style.color = "#485b90" ; // Changes the color of Font to Purple/Blue when hover over
+        }
+        function changeBackIconColor() {
+            document.getElementById('icon').style.fill = "white" ; // Changes the color of Icon Color back to white when hover out
+            document.getElementById('address').style.color = "white" ; // Changes the color of Font back to white when hover out
+        }
+        function changeIconColor1() {
+            document.getElementById('icon1').style.fill = "#485b90" ; // Changes the color of Icon Color to Purple/Blue when hover over
+            document.getElementById('phone').style.color = "#485b90" ; // Changes the color of Font to Purple/Blue when hover over
+        }
+        function changeBackIconColor1() {
+            document.getElementById('icon1').style.fill = "white" ; // Changes the color of Icon Color back to white when hover out
+            document.getElementById('phone').style.color = "white" ; // Changes the color of Font back to white when hover out
+        }
+    </script>
+
+</html>    
